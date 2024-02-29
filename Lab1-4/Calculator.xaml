@@ -1,0 +1,1066 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Lab1_4.Calculator">
+             <!--xmlns:local="clr-namespace:Lab1"-->
+
+    <Grid Padding="10" ColumnSpacing="15" RowSpacing="3" Background="{AppThemeBinding Light=White, Dark=Black}">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="140" />
+            <RowDefinition Height="0.4" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Label
+            Grid.Row="5"
+            Grid.Column="0"
+            Grid.ColumnSpan="4"
+            Background="DimGray"/>
+
+        <Label
+            Grid.Row="4"
+            Grid.Column="0"
+            Grid.ColumnSpan="4"
+            x:Name="result"
+            HorizontalTextAlignment="End"
+            VerticalTextAlignment="End"
+            FontSize="50"
+            TextColor="{AppThemeBinding Light=Black, Dark=White}"
+            Background="Transparent"/>
+
+        <Label
+            Grid.Row="3"
+            Grid.Column="0"
+            Grid.ColumnSpan="4"
+            x:Name="mem1"
+            HorizontalTextAlignment="End"
+            VerticalTextAlignment="End"
+            FontSize="30"
+            TextColor="Gray"
+            Background="Transparent"/>
+
+        <Label
+            Grid.Row="2"
+            Grid.Column="0"
+            Grid.ColumnSpan="4"
+            x:Name="mem2"
+            HorizontalTextAlignment="End"
+            VerticalTextAlignment="End"
+            FontSize="30"
+            TextColor="Gray"
+            Background="Transparent"/>
+
+        <Label
+            Grid.Row="1"
+            Grid.Column="0"
+            Grid.ColumnSpan="4"
+            x:Name="mem3"
+            HorizontalTextAlignment="End"
+            VerticalTextAlignment="End"
+            FontSize="30"
+            TextColor="Gray"
+            Background="Transparent"/>
+
+        <Label
+            Grid.Row="0"
+            Grid.Column="0"
+            Grid.ColumnSpan="4"
+            x:Name="mem4"
+            HorizontalTextAlignment="End"
+            VerticalTextAlignment="End"
+            FontSize="30"
+            TextColor="Gray"
+            Background="Transparent"/>
+
+        <Button
+            HeightRequest="70"
+            WidthRequest="70"
+            Grid.Row="10"
+            Grid.Column="0"
+            x:Name="one"
+            Text="1"
+            FontSize="30"
+            CornerRadius="100"
+            TextColor="{AppThemeBinding Light=Black, Dark=White}"
+            Background="Transparent"
+            Clicked="OnDigit"
+            Pressed="OnPres"
+            Released="OnRel"/>
+
+        <Button
+            HeightRequest="70"
+            WidthRequest="70"
+            Grid.Row="10"
+            Grid.Column="1"
+            x:Name="two"
+            Text="2"
+            FontSize="30"
+            CornerRadius="100"
+            TextColor="{AppThemeBinding Light=Black, Dark=White}"
+            Background="Transparent"
+            Clicked="OnDigit"
+            Pressed="OnPres"
+            Released="OnRel"/>
+
+        <Button
+            HeightRequest="70"
+            WidthRequest="70"
+            Grid.Row="10"
+            Grid.Column="2"
+            x:Name="three"
+            Text="3"
+            FontSize="30"
+            CornerRadius="100"
+            TextColor="{AppThemeBinding Light=Black, Dark=White}"
+            Background="Transparent"
+            Clicked="OnDigit"
+            Pressed="OnPres"
+            Released="OnRel"/>
+
+        <Button
+            HeightRequest="70"
+            WidthRequest="70"
+            Grid.Row="9"
+            Grid.Column="0"
+            x:Name="four"
+            Text="4"
+            FontSize="30"
+            CornerRadius="100"
+            TextColor="{AppThemeBinding Light=Black, Dark=White}"
+            Background="Transparent"
+            Clicked="OnDigit"
+            Pressed="OnPres"
+            Released="OnRel"/>
+
+        <Button
+            HeightRequest="70"
+        WidthRequest="70"
+            Grid.Row="9"
+            Grid.Column="1"
+            x:Name="five"
+            Text="5"
+            FontSize="30"
+            CornerRadius="100"
+            TextColor="{AppThemeBinding Light=Black, Dark=White}"
+            Background="Transparent"
+            Clicked="OnDigit"
+            Pressed="OnPres"
+            Released="OnRel"/>
+
+        <Button
+            HeightRequest="70"
+            WidthRequest="70"
+            Grid.Row="9"
+            Grid.Column="2"
+            x:Name="six"
+            Text="6"
+            FontSize="30"
+            CornerRadius="100"
+            TextColor="{AppThemeBinding Light=Black, Dark=White}"
+            Background="Transparent"
+            Clicked="OnDigit"
+            Pressed="OnPres"
+            Released="OnRel"/>
+
+        <Button
+            HeightRequest="70"
+            WidthRequest="70"
+            Grid.Row="8"
+            Grid.Column="0"
+            x:Name="seven"
+            Text="7"
+            FontSize="30"
+            CornerRadius="100"
+            TextColor="{AppThemeBinding Light=Black, Dark=White}"
+            Background="Transparent"
+            Clicked="OnDigit"
+            Pressed="OnPres"
+            Released="OnRel"/>
+
+        <Button
+            HeightRequest="70"
+            WidthRequest="70"
+            Grid.Row="8"
+            Grid.Column="1"
+            x:Name="eight"
+            Text="8"
+            FontSize="30"
+            CornerRadius="100"
+            TextColor="{AppThemeBinding Light=Black, Dark=White}"
+            Background="Transparent"
+            Clicked="OnDigit"
+            Pressed="OnPres"
+            Released="OnRel"/>
+
+        <Button
+            HeightRequest="70"
+            WidthRequest="70"
+            Grid.Row="8"
+            Grid.Column="2"
+            x:Name="nine"
+            Text="9"
+            FontSize="30"
+            CornerRadius="100"
+            TextColor="{AppThemeBinding Light=Black, Dark=White}"
+            Background="Transparent"
+            Clicked="OnDigit"
+            Pressed="OnPres"
+            Released="OnRel"/>
+
+        <Button
+            HeightRequest="70"
+            WidthRequest="70"
+            Grid.Row="11"
+            Grid.Column="1"
+            x:Name="zero"
+            Text="0"
+            FontSize="30"
+            CornerRadius="100"
+            TextColor="{AppThemeBinding Light=Black, Dark=White}"
+            Background="Transparent"
+            Clicked="OnDigit"
+            Pressed="OnPres"
+            Released="OnRel"/>
+
+        <Button
+            HeightRequest="70"
+            WidthRequest="70"
+            Grid.Row="7"
+            Grid.Column="3"
+            x:Name="div"
+            Text="÷"
+            FontSize="40"
+            CornerRadius="100"
+            TextColor="{AppThemeBinding Light=Blue, Dark=OrangeRed}"
+            Background="Transparent"
+            Clicked="OnDiv"
+            Pressed="OnPres"
+            Released="OnRel"/>
+
+        <Button
+            HeightRequest="70"
+            WidthRequest="70"
+            Grid.Row="8"
+            Grid.Column="3"
+            x:Name="mul"
+            Text="×"
+            FontSize="40"
+            CornerRadius="100"
+            TextColor="{AppThemeBinding Light=Blue, Dark=OrangeRed}"
+            Background="Transparent"
+            Clicked="OnMul"
+            Pressed="OnPres"
+            Released="OnRel"/>
+
+        <Button
+            HeightRequest="70"
+            WidthRequest="70"
+            Grid.Row="9"
+            Grid.Column="3"
+            x:Name="sub"
+            Text="−"
+            FontSize="40"
+            CornerRadius="100"
+            TextColor="{AppThemeBinding Light=Blue, Dark=OrangeRed}"
+            Background="Transparent"
+            Clicked="OnSub"
+            Pressed="OnPres"
+            Released="OnRel"/>
+
+        <Button
+            HeightRequest="70"
+            WidthRequest="70"
+            Grid.Row="10"
+            Grid.Column="3"
+            x:Name="add"
+            Text="+"
+            FontSize="40"
+            CornerRadius="100"
+            TextColor="{AppThemeBinding Light=Blue, Dark=OrangeRed}"
+            Background="Transparent"
+            Clicked="OnAdd"
+            Pressed="OnPres"
+            Released="OnRel"/>
+
+        <Button
+            HeightRequest="70"
+            WidthRequest="70"
+            Grid.Row="11"
+            Grid.Column="3"
+            x:Name="equ"
+            Text="="
+            FontSize="40"
+            CornerRadius="100"
+            TextColor="white"
+            Background="{AppThemeBinding Light=Blue, Dark=OrangeRed}"
+            Clicked="OnEqu"
+            Pressed="OnPres"
+            Released="OnRel"/>
+
+
+        <Button
+            HeightRequest="70"
+            WidthRequest="70"
+            Grid.Row="7"
+            Grid.Column="2"
+            x:Name="percent"
+            Text="%"
+            FontSize="30"
+            CornerRadius="100"
+            TextColor="{AppThemeBinding Light=Blue, Dark=OrangeRed}"
+            Background="Transparent"
+            Clicked="OnPercent"
+            Pressed="OnPres"
+            Released="OnRel"/>
+
+        <Button
+            HeightRequest="70"
+            WidthRequest="70"
+            Grid.Row="7"
+            Grid.Column="0"
+            x:Name="clear"
+            Text="с"
+            FontSize="30"
+            CornerRadius="100"
+            TextColor="{AppThemeBinding Light=Blue, Dark=OrangeRed}"
+            Background="Transparent"
+            Clicked="OnClear"
+            Pressed="OnPres"
+            Released="OnRel"/>
+
+        <Button
+            HeightRequest="70"
+            WidthRequest="70"
+            Grid.Row="6"
+            Grid.Column="3"
+            x:Name="custom"
+            Text="x^y"
+            FontSize="30"
+            CornerRadius="100"
+            TextColor="Gray"
+            Background="Transparent"
+            Clicked="OnCustom"
+            Pressed="OnPres"
+            Released="OnRel"/>
+
+        <Button
+            HeightRequest="70"
+            WidthRequest="70"
+            Grid.Row="7"
+            Grid.Column="1"
+            x:Name="del"
+            Text="⌫"
+            FontSize="25"
+            CornerRadius="100"
+            TextColor="{AppThemeBinding Light=Blue, Dark=OrangeRed}"
+            Background="Transparent"
+            Clicked="OnDel"
+            Pressed="OnPres"
+            Released="OnRel"/>
+
+        <Button
+            HeightRequest="70"
+            WidthRequest="70"
+            Grid.Row="6"
+            Grid.Column="2"
+            x:Name="squ"
+            Text="x²"
+            FontSize="30"
+            CornerRadius="100"
+            TextColor="Gray"
+            Background="Transparent"
+            Clicked="OnSqu"
+            Pressed="OnPres"
+            Released="OnRel"/>
+
+        <Button
+            HeightRequest="70"
+            WidthRequest="70"
+            Grid.Row="6"
+            Grid.Column="1"
+            x:Name="squRoot"
+            Text="√x"
+            FontSize="30"
+            CornerRadius="100"
+            TextColor="Gray"
+            Background="Transparent"
+            Clicked="OnSquRoot"
+            Pressed="OnPres"
+            Released="OnRel"/>
+
+        <Button
+            HeightRequest="70"
+            WidthRequest="70"
+            Grid.Row="6"
+            Grid.Column="0"
+            x:Name="invert"
+            Text="1/x"
+            FontSize="30"
+            CornerRadius="100"
+            TextColor="Gray"
+            Background="Transparent"
+            Clicked="OnInvert"
+            Pressed="OnPres"
+            Released="OnRel"/>
+
+        <Button
+            HeightRequest="70"
+            WidthRequest="70"
+            Grid.Row="11"
+            Grid.Column="2"
+            x:Name="comma"
+            Text=","
+            FontSize="30"
+            CornerRadius="100"
+            TextColor="{AppThemeBinding Light=Black, Dark=White}"
+            Background="Transparent"
+            Clicked="OnComma"
+            Pressed="OnPres"
+            Released="OnRel"/>
+
+        <Button
+            HeightRequest="70"
+            WidthRequest="70"
+            Grid.Row="11"
+            Grid.Column="0"
+            x:Name="neg"
+            Text="+/-"
+            FontSize="30"
+            CornerRadius="100"
+            TextColor="{AppThemeBinding Light=Blue, Dark=OrangeRed}"
+            Background="Transparent"
+            Clicked="OnNeg"
+            Pressed="OnPres"
+            Released="OnRel"/>
+
+    </Grid>
+
+</ContentPage>
+
+
+<!--<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Lab1.MainPage">
+
+    <Grid Padding="10" ColumnSpacing="15" RowSpacing="3">
+
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStopCollection>
+                    <GradientStop Offset="0" Color="Lime"/>
+                    <GradientStop Offset="1" Color="Red"/>
+                </GradientStopCollection>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="140" />
+            <RowDefinition Height="0.4" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        --><!--<Label
+            Grid.Row="5"
+            Grid.Column="0"
+            Grid.ColumnSpan="4"
+            Background="DimGray"/>--><!--
+
+        <Label
+            Grid.Row="4"
+            Grid.Column="0"
+            Grid.ColumnSpan="4"
+            x:Name="result"
+            HorizontalTextAlignment="End"
+            VerticalTextAlignment="End"
+            FontSize="50"
+            TextColor="white"
+            Background="Transparent"/>
+
+        <Label
+            Grid.Row="3"
+            Grid.Column="0"
+            Grid.ColumnSpan="4"
+            x:Name="mem1"
+            HorizontalTextAlignment="End"
+            VerticalTextAlignment="End"
+            FontSize="30"
+            TextColor="Gray"
+            Background="Transparent"/>
+
+        <Label
+            Grid.Row="2"
+            Grid.Column="0"
+            Grid.ColumnSpan="4"
+            x:Name="mem2"
+            HorizontalTextAlignment="End"
+            VerticalTextAlignment="End"
+            FontSize="30"
+            TextColor="Gray"
+            Background="Transparent"/>
+
+        <Label
+            Grid.Row="1"
+            Grid.Column="0"
+            Grid.ColumnSpan="4"
+            x:Name="mem3"
+            HorizontalTextAlignment="End"
+            VerticalTextAlignment="End"
+            FontSize="30"
+            TextColor="Gray"
+            Background="Transparent"/>
+
+        <Label
+            Grid.Row="0"
+            Grid.Column="0"
+            Grid.ColumnSpan="4"
+            x:Name="mem4"
+            HorizontalTextAlignment="End"
+            VerticalTextAlignment="End"
+            FontSize="30"
+            TextColor="Gray"
+            Background="Transparent"/>
+
+        <Button Grid.Row="10"
+            Grid.Column="0"
+            x:Name="one"
+            Text="1"
+            FontSize="30"
+            CornerRadius="100"
+            TextColor="White"
+            Clicked="OnDigit"
+            Pressed="OnPres"
+            Released="OnRel">
+            <Button.Background>
+                <RadialGradientBrush>
+                    <GradientStopCollection>
+                        <GradientStop Offset="0" Color="Blue"/>
+                        <GradientStop Offset="1" Color="Yellow"/>
+                    </GradientStopCollection>
+                </RadialGradientBrush>
+            </Button.Background>
+        </Button>
+
+        <Button
+            Grid.Row="10"
+            Grid.Column="1"
+            x:Name="two"
+            Text="2"
+            FontSize="30"
+            CornerRadius="100"
+            TextColor="White"
+            Clicked="OnDigit"
+            Pressed="OnPres"
+            Released="OnRel">
+            <Button.Background>
+                <RadialGradientBrush>
+                    <GradientStopCollection>
+                        <GradientStop Offset="0" Color="Blue"/>
+                        <GradientStop Offset="1" Color="Yellow"/>
+                    </GradientStopCollection>
+                </RadialGradientBrush>
+            </Button.Background>
+        </Button>
+
+        <Button
+            Grid.Row="10"
+            Grid.Column="2"
+            x:Name="three"
+            Text="3"
+            FontSize="30"
+            CornerRadius="100"
+            TextColor="White"
+            Clicked="OnDigit"
+            Pressed="OnPres"
+            Released="OnRel">
+            <Button.Background>
+                <RadialGradientBrush>
+                    <GradientStopCollection>
+                        <GradientStop Offset="0" Color="Blue"/>
+                        <GradientStop Offset="1" Color="Yellow"/>
+                    </GradientStopCollection>
+                </RadialGradientBrush>
+            </Button.Background>
+        </Button>
+
+        <Button
+            Grid.Row="9"
+            Grid.Column="0"
+            x:Name="four"
+            Text="4"
+            FontSize="30"
+            CornerRadius="100"
+            TextColor="White"
+            Clicked="OnDigit"
+            Pressed="OnPres"
+            Released="OnRel">
+            <Button.Background>
+                <RadialGradientBrush>
+                    <GradientStopCollection>
+                        <GradientStop Offset="0" Color="Blue"/>
+                        <GradientStop Offset="1" Color="Yellow"/>
+                    </GradientStopCollection>
+                </RadialGradientBrush>
+            </Button.Background>
+        </Button>
+
+        <Button
+            Grid.Row="9"
+            Grid.Column="1"
+            x:Name="five"
+            Text="5"
+            FontSize="30"
+            CornerRadius="100"
+            TextColor="White"
+            Clicked="OnDigit"
+            Pressed="OnPres"
+            Released="OnRel">
+            <Button.Background>
+                <RadialGradientBrush>
+                    <GradientStopCollection>
+                        <GradientStop Offset="0" Color="Blue"/>
+                        <GradientStop Offset="1" Color="Yellow"/>
+                    </GradientStopCollection>
+                </RadialGradientBrush>
+            </Button.Background>
+        </Button>
+
+        <Button
+            Grid.Row="9"
+            Grid.Column="2"
+            x:Name="six"
+            Text="6"
+            FontSize="30"
+            CornerRadius="100"
+            TextColor="White"
+            Clicked="OnDigit"
+            Pressed="OnPres"
+            Released="OnRel">
+            <Button.Background>
+                <RadialGradientBrush>
+                    <GradientStopCollection>
+                        <GradientStop Offset="0" Color="Blue"/>
+                        <GradientStop Offset="1" Color="Yellow"/>
+                    </GradientStopCollection>
+                </RadialGradientBrush>
+            </Button.Background>
+        </Button>
+
+        <Button
+            Grid.Row="8"
+            Grid.Column="0"
+            x:Name="seven"
+            Text="7"
+            FontSize="30"
+            CornerRadius="100"
+            TextColor="White"
+            Clicked="OnDigit"
+            Pressed="OnPres"
+            Released="OnRel">
+            <Button.Background>
+                <RadialGradientBrush>
+                    <GradientStopCollection>
+                        <GradientStop Offset="0" Color="Blue"/>
+                        <GradientStop Offset="1" Color="Yellow"/>
+                    </GradientStopCollection>
+                </RadialGradientBrush>
+            </Button.Background>
+        </Button>
+
+        <Button
+            Grid.Row="8"
+            Grid.Column="1"
+            x:Name="eight"
+            Text="8"
+            FontSize="30"
+            CornerRadius="100"
+            TextColor="White"
+            Clicked="OnDigit"
+            Pressed="OnPres"
+            Released="OnRel">
+            <Button.Background>
+                <RadialGradientBrush>
+                    <GradientStopCollection>
+                        <GradientStop Offset="0" Color="Blue"/>
+                        <GradientStop Offset="1" Color="Yellow"/>
+                    </GradientStopCollection>
+                </RadialGradientBrush>
+            </Button.Background>
+        </Button>
+
+        <Button
+            Grid.Row="8"
+            Grid.Column="2"
+            x:Name="nine"
+            Text="9"
+            FontSize="30"
+            CornerRadius="100"
+            TextColor="White"
+            Clicked="OnDigit"
+            Pressed="OnPres"
+            Released="OnRel">
+            <Button.Background>
+                <RadialGradientBrush>
+                    <GradientStopCollection>
+                        <GradientStop Offset="0" Color="Blue"/>
+                        <GradientStop Offset="1" Color="Yellow"/>
+                    </GradientStopCollection>
+                </RadialGradientBrush>
+            </Button.Background>
+        </Button>
+
+        <Button
+            Grid.Row="11"
+            Grid.Column="1"
+            x:Name="zero"
+            Text="0"
+            FontSize="30"
+            CornerRadius="100"
+            TextColor="White"
+            Clicked="OnDigit"
+            Pressed="OnPres"
+            Released="OnRel">
+            <Button.Background>
+                <RadialGradientBrush>
+                    <GradientStopCollection>
+                        <GradientStop Offset="0" Color="Blue"/>
+                        <GradientStop Offset="1" Color="Yellow"/>
+                    </GradientStopCollection>
+                </RadialGradientBrush>
+            </Button.Background>
+        </Button>
+
+        <Button
+            Grid.Row="7"
+            Grid.Column="3"
+            x:Name="div"
+            Text="÷"
+            FontSize="40"
+            CornerRadius="100"
+            TextColor="OrangeRed"
+            Clicked="OnDiv"
+            Pressed="OnPres"
+            Released="OnRel">
+            <Button.Background>
+                <RadialGradientBrush>
+                    <GradientStopCollection>
+                        <GradientStop Offset="0" Color="Blue"/>
+                        <GradientStop Offset="1" Color="Yellow"/>
+                    </GradientStopCollection>
+                </RadialGradientBrush>
+            </Button.Background>
+        </Button>
+
+        <Button
+            Grid.Row="8"
+            Grid.Column="3"
+            x:Name="mul"
+            Text="×"
+            FontSize="40"
+            CornerRadius="100"
+            TextColor="OrangeRed"
+            Clicked="OnMul"
+            Pressed="OnPres"
+            Released="OnRel">
+            <Button.Background>
+                <RadialGradientBrush>
+                    <GradientStopCollection>
+                        <GradientStop Offset="0" Color="Blue"/>
+                        <GradientStop Offset="1" Color="Yellow"/>
+                    </GradientStopCollection>
+                </RadialGradientBrush>
+            </Button.Background>
+        </Button>
+
+        <Button
+            Grid.Row="9"
+            Grid.Column="3"
+            x:Name="sub"
+            Text="−"
+            FontSize="40"
+            CornerRadius="100"
+            TextColor="OrangeRed"
+            Clicked="OnSub"
+            Pressed="OnPres"
+            Released="OnRel">
+            <Button.Background>
+                <RadialGradientBrush>
+                    <GradientStopCollection>
+                        <GradientStop Offset="0" Color="Blue"/>
+                        <GradientStop Offset="1" Color="Yellow"/>
+                    </GradientStopCollection>
+                </RadialGradientBrush>
+            </Button.Background>
+        </Button>
+
+        <Button
+            Grid.Row="10"
+            Grid.Column="3"
+            x:Name="add"
+            Text="+"
+            FontSize="40"
+            CornerRadius="100"
+            TextColor="OrangeRed"
+            Clicked="OnAdd"
+            Pressed="OnPres"
+            Released="OnRel">
+            <Button.Background>
+                <RadialGradientBrush>
+                    <GradientStopCollection>
+                        <GradientStop Offset="0" Color="Blue"/>
+                        <GradientStop Offset="1" Color="Yellow"/>
+                    </GradientStopCollection>
+                </RadialGradientBrush>
+            </Button.Background>
+        </Button>
+
+        <Button
+            HeightRequest="70"
+            WidthRequest="70"
+            Grid.Row="11"
+            Grid.Column="3"
+            x:Name="equ"
+            Text="="
+            FontSize="40"
+            CornerRadius="100"
+            TextColor="OrangeRed"
+            Clicked="OnEqu"
+            Pressed="OnPres"
+            Released="OnRel">
+            <Button.Background>
+                <RadialGradientBrush>
+                    <GradientStopCollection>
+                        <GradientStop Offset="0" Color="Blue"/>
+                        <GradientStop Offset="1" Color="Yellow"/>
+                    </GradientStopCollection>
+                </RadialGradientBrush>
+            </Button.Background>
+        </Button>
+        
+        
+
+        <Button
+            Grid.Row="7"
+            Grid.Column="2"
+            x:Name="percent"
+            Text="%"
+            FontSize="30"
+            CornerRadius="100"
+            TextColor="OrangeRed"
+            Clicked="OnPercent"
+            Pressed="OnPres"
+            Released="OnRel">
+            <Button.Background>
+                <RadialGradientBrush>
+                    <GradientStopCollection>
+                        <GradientStop Offset="0" Color="Blue"/>
+                        <GradientStop Offset="1" Color="Yellow"/>
+                    </GradientStopCollection>
+                </RadialGradientBrush>
+            </Button.Background>
+        </Button>
+
+        <Button
+            Grid.Row="7"
+            Grid.Column="0"
+            x:Name="clear"
+            Text="с"
+            FontSize="30"
+            CornerRadius="100"
+            TextColor="OrangeRed"
+            Clicked="OnClear"
+            Pressed="OnPres"
+            Released="OnRel">
+            <Button.Background>
+                <RadialGradientBrush>
+                    <GradientStopCollection>
+                        <GradientStop Offset="0" Color="Blue"/>
+                        <GradientStop Offset="1" Color="Yellow"/>
+                    </GradientStopCollection>
+                </RadialGradientBrush>
+            </Button.Background>
+        </Button>
+
+        <Button
+            Grid.Row="6"
+            Grid.Column="3"
+            x:Name="custom"
+            Text="x^y"
+            FontSize="27"
+            CornerRadius="100"
+            TextColor="OrangeRed"
+            Clicked="OnCustom"
+            Pressed="OnPres"
+            Released="OnRel">
+            <Button.Background>
+                <RadialGradientBrush>
+                    <GradientStopCollection>
+                        <GradientStop Offset="0" Color="Blue"/>
+                        <GradientStop Offset="1" Color="Yellow"/>
+                    </GradientStopCollection>
+                </RadialGradientBrush>
+            </Button.Background>
+        </Button>
+
+        <Button
+            Grid.Row="7"
+            Grid.Column="1"
+            x:Name="del"
+            Text="⌫"
+            FontSize="25"
+            CornerRadius="100"
+            TextColor="OrangeRed"
+            Clicked="OnDel"
+            Pressed="OnPres"
+            Released="OnRel">
+            <Button.Background>
+                <RadialGradientBrush>
+                    <GradientStopCollection>
+                        <GradientStop Offset="0" Color="Blue"/>
+                        <GradientStop Offset="1" Color="Yellow"/>
+                    </GradientStopCollection>
+                </RadialGradientBrush>
+            </Button.Background>
+        </Button>
+
+        <Button
+            Grid.Row="6"
+            Grid.Column="2"
+            x:Name="squ"
+            Text="x²"
+            FontSize="30"
+            CornerRadius="100"
+            TextColor="Orangered"
+            Clicked="OnSqu"
+            Pressed="OnPres"
+            Released="OnRel">
+            <Button.Background>
+                <RadialGradientBrush>
+                    <GradientStopCollection>
+                        <GradientStop Offset="0" Color="Blue"/>
+                        <GradientStop Offset="1" Color="Yellow"/>
+                    </GradientStopCollection>
+                </RadialGradientBrush>
+            </Button.Background>
+        </Button>
+
+        <Button
+            Grid.Row="6"
+            Grid.Column="1"
+            x:Name="squRoot"
+            Text="√x"
+            FontSize="30"
+            CornerRadius="100"
+            TextColor="OrangeRed"
+            Clicked="OnSquRoot"
+            Pressed="OnPres"
+            Released="OnRel">
+            <Button.Background>
+                <RadialGradientBrush>
+                    <GradientStopCollection>
+                        <GradientStop Offset="0" Color="Blue"/>
+                        <GradientStop Offset="1" Color="Yellow"/>
+                    </GradientStopCollection>
+                </RadialGradientBrush>
+            </Button.Background>
+        </Button>
+
+        <Button
+            Grid.Row="6"
+            Grid.Column="0"
+            x:Name="invert"
+            Text="1/x"
+            FontSize="30"
+            CornerRadius="100"
+            TextColor="OrangeRed"
+            Clicked="OnInvert"
+            Pressed="OnPres"
+            Released="OnRel">
+            <Button.Background>
+                <RadialGradientBrush>
+                    <GradientStopCollection>
+                        <GradientStop Offset="0" Color="Blue"/>
+                        <GradientStop Offset="1" Color="Yellow"/>
+                    </GradientStopCollection>
+                </RadialGradientBrush>
+            </Button.Background>
+        </Button>
+
+        <Button
+            Grid.Row="11"
+            Grid.Column="2"
+            x:Name="comma"
+            Text=","
+            FontSize="30"
+            CornerRadius="100"
+            TextColor="White"
+            Clicked="OnComma"
+            Pressed="OnPres"
+            Released="OnRel">
+            <Button.Background>
+                <RadialGradientBrush>
+                    <GradientStopCollection>
+                        <GradientStop Offset="0" Color="Blue"/>
+                        <GradientStop Offset="1" Color="Yellow"/>
+                    </GradientStopCollection>
+                </RadialGradientBrush>
+            </Button.Background>
+        </Button>
+
+        <Button
+            Grid.Row="11"
+            Grid.Column="0"
+            x:Name="neg"
+            Text="+/-"
+            FontSize="30"
+            CornerRadius="100"
+            TextColor="OrangeRed"
+            Clicked="OnNeg"
+            Pressed="OnPres"
+            Released="OnRel">
+            <Button.Background>
+                <RadialGradientBrush>
+                    <GradientStopCollection>
+                        <GradientStop Offset="0" Color="Blue"/>
+                        <GradientStop Offset="1" Color="Yellow"/>
+                    </GradientStopCollection>
+                </RadialGradientBrush>
+            </Button.Background>
+        </Button>
+
+    </Grid>
+    
+</ContentPage>-->
