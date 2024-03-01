@@ -65,16 +65,30 @@
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+		<PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Calculator.xaml">
+	  <Compile Update="CalculatorPage.xaml.cs">
+	    <DependentUpon>CalculatorPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="DataBasePage.xaml.cs">
+	    <DependentUpon>DataBasePage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="IntegralPage.xaml.cs">
+	    <DependentUpon>IntegralPage.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="CalculatorPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Integral.xaml">
+	  <MauiXaml Update="IntegralPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="DataBase.xaml">
+	  <MauiXaml Update="DataBasePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

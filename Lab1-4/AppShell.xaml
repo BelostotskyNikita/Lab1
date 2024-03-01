@@ -12,20 +12,20 @@
         <ShellContent
         x:Name="gg"
         Title="Calculator"
-        ContentTemplate="{DataTemplate local:Calculator}"
-        Route="Calculator"
+        ContentTemplate="{DataTemplate local:CalculatorPage}"
+        Route="CalculatorPage"
         Icon="calculator.png"/>
 
         <ShellContent
         Title="Integral"
-        ContentTemplate="{DataTemplate local:Integral}"
-        Route="Integral"
+        ContentTemplate="{DataTemplate local:IntegralPage}"
+        Route="IntegralPage"
         Icon="integral.png"/>
 
         <ShellContent
         Title="DataBase"
-        ContentTemplate="{DataTemplate local:DataBase}"
-        Route="DataBase"
+        ContentTemplate="{DataTemplate local:DataBasePage}"
+        Route="DataBasePage"
         Icon="data_base.png"/>
 
     </FlyoutItem>

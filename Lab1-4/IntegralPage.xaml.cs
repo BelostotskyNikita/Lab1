@@ -1,13 +1,13 @@
 ﻿namespace Lab1_4;
 
-public partial class Integral : ContentPage
+public partial class IntegralPage : ContentPage
 {
     CancellationTokenSource source = null;
     //double sum = 0;
     //int persent = 0;
     bool isCancelled = false, isStarted = false;
     Color color = Color.Parse("LightGray");
-    public Integral() => InitializeComponent();
+    public IntegralPage() => InitializeComponent();
     private async void OnStart(object sender, EventArgs e)
     {
         //((Button)sender).IsEnabled = false;

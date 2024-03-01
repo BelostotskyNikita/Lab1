@@ -1,10 +1,10 @@
 ﻿namespace Lab1_4
 {
-    public partial class Calculator : ContentPage
+    public partial class CalculatorPage : ContentPage
     {
         bool operatorMath = false, firstNum = false, secondNum = false, mem = false, commaL = false;
         char op;
-        public Calculator()
+        public CalculatorPage()
         {
             InitializeComponent();
         }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using Lab1_4.Services;
 
 namespace Lab1_4
 {
@@ -14,9 +15,10 @@ namespace Lab1_4
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
+            builder.Services.AddTransient<IDbService, SQLiteService>();
 
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
 
             return builder.Build();
