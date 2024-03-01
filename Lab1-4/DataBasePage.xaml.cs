@@ -9,10 +9,8 @@ public partial class DataBasePage : ContentPage
 	{
 		InitializeComponent();
         sqliteserv.Init();
-	}
-	private void one_Clicked(object sender, EventArgs e)
-    {
-        var teams = sqliteserv.GetAllTeams().ToList();
-        this.picker.ItemsSource = teams;
+        var teams = sqliteserv.GetAllTeams();
+        this.picker.ItemsSource = teams.Select(item => item.Name).ToList();
     }
+	
 }

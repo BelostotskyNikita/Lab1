@@ -9,7 +9,7 @@ namespace Lab1_4.Entities
         [Column("Id")]
         public int MemberId { get; set; }
         public string? Name { get; set; }
-        public string? Surname { get; set; }
+        public int Number { get; set; }
         [Indexed]
         public int TeamId { get; set; }
     }

@@ -6,42 +6,15 @@
     
     <VerticalStackLayout>
         
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-        
         <Picker
             x:Name="picker"
-            Title="picker"
+            Title="Select a team"
             TextColor="Red"
             Background="blue">
             <Picker.ItemsSource>
-                <x:Array Type="{x:Type x:String}">
-                    <x:String>Baboon</x:String>
-                    <x:String>Capuchin Monkey</x:String>
-                    <x:String>Blue Monkey</x:String>
-                    <x:String>Squirrel Monkey</x:String>
-                    <x:String>Golden Lion Tamarin</x:String>
-                    <x:String>Howler Monkey</x:String>
-                    <x:String>Japanese Macaque</x:String>
-                </x:Array>
+                <x:Array Type="{x:Type x:String}"/>
             </Picker.ItemsSource>
-            <!--<Picker.Items>
-                <x:String>g1</x:String>
-                <x:String>g2</x:String>
-                <x:String>g3</x:String>
-            </Picker.Items>-->
         </Picker>
-
-        <Button
-            x:Name="PM"
-            Text="Push me"
-            FontSize="30"
-            CornerRadius="100"
-            TextColor="Red"
-            Background="Blue"
-            Clicked="one_Clicked"/>
 
     </VerticalStackLayout>
     
