@@ -3,18 +3,28 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Lab1_4.DataBasePage"
              Title="DataBase">
-    
-    <VerticalStackLayout>
+
+    <VerticalStackLayout Background="{AppThemeBinding Light=White, Dark=LightBlack}">
         
         <Picker
             x:Name="picker"
+            FontSize="25"
+            TitleColor="{AppThemeBinding Light=Black, Dark=White}"
             Title="Select a team"
-            TextColor="Red"
-            Background="blue">
+            TextColor="{AppThemeBinding Light=Black, Dark=White}"
+            Background="Transparent"
+            SelectedIndexChanged="picker_SelectedIndexChanged">
             <Picker.ItemsSource>
                 <x:Array Type="{x:Type x:String}"/>
             </Picker.ItemsSource>
         </Picker>
+
+        <ListView Background="Transparent"
+                  x:Name="ListView">
+            <ListView.ItemsSource>
+                <x:Array Type="{x:Type x:String}"/>
+            </ListView.ItemsSource>
+        </ListView>
 
     </VerticalStackLayout>
     

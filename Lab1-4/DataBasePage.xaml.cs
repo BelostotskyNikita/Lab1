@@ -12,5 +12,14 @@ public partial class DataBasePage : ContentPage
         var teams = sqliteserv.GetAllTeams();
         this.picker.ItemsSource = teams.Select(item => item.Name).ToList();
     }
-	
+    private void picker_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        var picker = (Picker)sender;
+        int selectedIndex = picker.SelectedIndex;
+        if (selectedIndex != -1)
+        {
+            var members = sqliteserv.GetMembers(selectedIndex);
+            this.ListView.ItemsSource = members.Select(item => item.Name + ' ' + item.Number).ToList();
+        }
+    }
 }
