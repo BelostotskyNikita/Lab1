@@ -56,9 +56,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\barcelona.png" />
 	  <None Remove="Resources\Images\calculator.png" />
 	  <None Remove="Resources\Images\data_base.png" />
 	  <None Remove="Resources\Images\integral.png" />
+	  <None Remove="Resources\Images\juventus.png" />
+	  <None Remove="Resources\Images\liverpool.png" />
+	  <None Remove="Resources\Images\money.png" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -84,6 +88,9 @@
 
 	<ItemGroup>
 	  <MauiXaml Update="CalculatorPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="CurrencyConverterPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="IntegralPage.xaml">

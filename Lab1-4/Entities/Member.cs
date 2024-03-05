@@ -10,6 +10,7 @@ namespace Lab1_4.Entities
         public int MemberId { get; set; }
         public string? Name { get; set; }
         public int Number { get; set; }
+        public string? Emblem { get; set; }
         [Indexed]
         public int TeamId { get; set; }
     }

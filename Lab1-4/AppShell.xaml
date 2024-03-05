@@ -10,7 +10,6 @@
     <FlyoutItem Title="Home" FlyoutDisplayOptions="AsMultipleItems">
 
         <ShellContent
-        x:Name="gg"
         Title="Calculator"
         ContentTemplate="{DataTemplate local:CalculatorPage}"
         Route="CalculatorPage"
@@ -27,6 +26,12 @@
         ContentTemplate="{DataTemplate local:DataBasePage}"
         Route="DataBasePage"
         Icon="data_base.png"/>
+
+        <ShellContent
+        Title="CurrencyConverter"
+        ContentTemplate="{DataTemplate local:CurrencyConverterPage}"
+        Route="CurrencyConverterPage"
+        Icon="money.png"/>
 
     </FlyoutItem>
 

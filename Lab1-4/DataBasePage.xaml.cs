@@ -1,4 +1,5 @@
 using Lab1_4.Services;
+using Lab1_4.Entities;
 
 namespace Lab1_4;
 
@@ -9,8 +10,7 @@ public partial class DataBasePage : ContentPage
 	{
 		InitializeComponent();
         sqliteserv.Init();
-        var teams = sqliteserv.GetAllTeams();
-        this.picker.ItemsSource = teams.Select(item => item.Name).ToList();
+        this.picker.ItemsSource = sqliteserv.GetAllTeams().Select(item => item.Name).ToList();
     }
     private void picker_SelectedIndexChanged(object sender, EventArgs e)
     {
@@ -18,8 +18,8 @@ public partial class DataBasePage : ContentPage
         int selectedIndex = picker.SelectedIndex;
         if (selectedIndex != -1)
         {
-            var members = sqliteserv.GetMembers(selectedIndex);
-            this.ListView.ItemsSource = members.Select(item => item.Name + ' ' + item.Number).ToList();
+            var members = sqliteserv.GetMembers(selectedIndex).ToList();
+            this.ListView.ItemsSource = members;
         }
     }
 }

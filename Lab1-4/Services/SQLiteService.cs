@@ -19,6 +19,7 @@ namespace Lab1_4.Services
                 .ToList();
             return members;
         }
+        public string? GetTeamEm(int id) => db.Table<Team>().ToList()[id].Emblem;
         public void Init()
         {
             if (db is not null) return;
@@ -28,26 +29,26 @@ namespace Lab1_4.Services
             db.CreateTable<Team>();
             db.CreateTable<Member>();
             
-            db.Insert(new Team { Name = "Барселона" });
-            db.Insert(new Member() { Name = "Марк-Андре тер Стеген", Number = 1, TeamId = 0 });
-            db.Insert(new Member() { Name = "Жоау Канселу", Number = 2, TeamId = 0 });
-            db.Insert(new Member() { Name = "Алехандро Бальде", Number = 3, TeamId = 0 });
-            db.Insert(new Member() { Name = "Рональд Араухо", Number = 4, TeamId = 0 });
-            db.Insert(new Member() { Name = "Иньиго Мартинес", Number = 5, TeamId = 0 });
+            db.Insert(new Team { Name = "Барселона", Emblem = "barcelona.png" });
+            db.Insert(new Member() { Name = "Марк-Андре тер Стеген", Number = 1, TeamId = 0, Emblem = "barcelona.png" });
+            db.Insert(new Member() { Name = "Жоау Канселу", Number = 2, TeamId = 0, Emblem = "barcelona.png" });
+            db.Insert(new Member() { Name = "Алехандро Бальде", Number = 3, TeamId = 0, Emblem = "barcelona.png" });
+            db.Insert(new Member() { Name = "Рональд Араухо", Number = 4, TeamId = 0, Emblem = "barcelona.png" });
+            db.Insert(new Member() { Name = "Иньиго Мартинес", Number = 5, TeamId = 0, Emblem = "barcelona.png" });
             
-            db.Insert(new Team { Name = "Ювентус" });
-            db.Insert(new Member() { Name = "Войцех Щенсный", Number = 1, TeamId = 1 });
-            db.Insert(new Member() { Name = "Маттия Де Шильо", Number = 2, TeamId = 1 });
-            db.Insert(new Member() { Name = "Глейсон Бремер", Number = 3, TeamId = 1 });
-            db.Insert(new Member() { Name = "Федерико Гатти", Number = 4, TeamId = 1 });
+            db.Insert(new Team { Name = "Ювентус", Emblem = "juventus.png" });
+            db.Insert(new Member() { Name = "Войцех Щенсный", Number = 1, TeamId = 1, Emblem = "juventus.png" });
+            db.Insert(new Member() { Name = "Маттия Де Шильо", Number = 2, TeamId = 1, Emblem = "juventus.png" });
+            db.Insert(new Member() { Name = "Глейсон Бремер", Number = 3, TeamId = 1, Emblem = "juventus.png" });
+            db.Insert(new Member() { Name = "Федерико Гатти", Number = 4, TeamId = 1, Emblem = "juventus.png" });
             
-            db.Insert(new Team { Name = "Ливерпуль" });
-            db.Insert(new Member() { Name = "Алиссон Бекер", Number = 1, TeamId = 2 });
-            db.Insert(new Member() { Name = "Джозеф Гомес", Number = 2, TeamId = 2 });
-            db.Insert(new Member() { Name = "Ватару Эндо", Number = 3, TeamId = 2 });
-            db.Insert(new Member() { Name = "Вирджил ван Дейк", Number = 4, TeamId = 2 });
-            db.Insert(new Member() { Name = "Ибраима Конате", Number = 5, TeamId = 2 });
-            db.Insert(new Member() { Name = "Тьяго Алькантара", Number = 6, TeamId = 2 });
+            db.Insert(new Team { Name = "Ливерпуль", Emblem = "liverpool.png" });
+            db.Insert(new Member() { Name = "Алиссон Бекер", Number = 1, TeamId = 2, Emblem = "liverpool.png" });
+            db.Insert(new Member() { Name = "Джозеф Гомес", Number = 2, TeamId = 2, Emblem = "liverpool.png" });
+            db.Insert(new Member() { Name = "Ватару Эндо", Number = 3, TeamId = 2, Emblem = "liverpool.png" });
+            db.Insert(new Member() { Name = "Вирджил ван Дейк", Number = 4, TeamId = 2, Emblem = "liverpool.png" });
+            db.Insert(new Member() { Name = "Ибраима Конате", Number = 5, TeamId = 2, Emblem = "liverpool.png" });
+            db.Insert(new Member() { Name = "Тьяго Алькантара", Number = 6, TeamId = 2, Emblem = "liverpool.png" });
 
         }
     }

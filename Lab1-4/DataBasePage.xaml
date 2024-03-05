@@ -8,22 +8,54 @@
         
         <Picker
             x:Name="picker"
-            FontSize="25"
+            FontSize="30"
             TitleColor="{AppThemeBinding Light=Black, Dark=White}"
-            Title="Select a team"
+            Title="Выберите команду"
             TextColor="{AppThemeBinding Light=Black, Dark=White}"
             Background="Transparent"
-            SelectedIndexChanged="picker_SelectedIndexChanged">
+            SelectedIndexChanged="picker_SelectedIndexChanged"
+            VerticalOptions="End">
             <Picker.ItemsSource>
                 <x:Array Type="{x:Type x:String}"/>
             </Picker.ItemsSource>
         </Picker>
 
-        <ListView Background="Transparent"
-                  x:Name="ListView">
-            <ListView.ItemsSource>
-                <x:Array Type="{x:Type x:String}"/>
-            </ListView.ItemsSource>
+        <ListView
+            Background="Transparent"
+            x:Name="ListView">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="10" ColumnSpacing="15" RowSpacing="3">
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="5*" />
+                                <ColumnDefinition Width="0.5*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Image
+                                Grid.Column="0"
+                                Source="{Binding Emblem}"/>
+
+                            <Label
+                                Grid.Column="1"
+                                Text="{Binding Name}"
+                                TextColor="{AppThemeBinding Light=Black, Dark=White}"
+                                VerticalOptions="Center"
+                                FontSize="20"/>
+
+                            <Label
+                                Grid.Column="2"
+                                Text="{Binding Number}"
+                                TextColor="{AppThemeBinding Light=Black, Dark=White}"
+                                VerticalOptions="Center"
+                                FontSize="20"/>
+
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
         </ListView>
 
     </VerticalStackLayout>

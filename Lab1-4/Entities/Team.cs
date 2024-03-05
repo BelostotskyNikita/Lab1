@@ -8,5 +8,6 @@ namespace Lab1_4.Entities
         [PrimaryKey, AutoIncrement, Indexed]
         public int Id { get; set; }
         public string? Name { get; set; }
+        public string? Emblem { get; set; }
     }
 }

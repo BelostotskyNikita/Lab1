@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Lab1_4.CurrencyConverterPage"
+             Title="CurrencyConverterPage">
+
+    <Grid Padding="10" ColumnSpacing="15" RowSpacing="3" Background="{AppThemeBinding Light=White, Dark=Black}">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2.5*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Entry
+            Grid.Column="0"
+            Grid.Row="0"
+            Text="entry1"
+            TextChanged="OnEntry1TextChanged"/>
+
+        <Entry
+            Grid.Column="0"
+            Grid.Row="1"
+            Text="entry2"
+            TextChanged="OnEntry2TextChanged"/>
+
+        <Picker 
+            Grid.Column="1"
+            Grid.Row="0"
+            x:Name="picker1"
+            Title="picker1"
+            SelectedIndexChanged="picker1_SelectedIndexChanged">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Российский рубль</x:String>
+                    <x:String>Евро</x:String>
+                    <x:String>Доллар США</x:String>
+                    <x:String>Швейцарский франк</x:String>
+                    <x:String>Китайский юань</x:String>
+                    <x:String>Фунт стерлингов</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
+        <Picker 
+            Grid.Column="1"
+            Grid.Row="1"
+            x:Name="picker2"
+            Title="picker2"
+            SelectedIndexChanged="picker2_SelectedIndexChanged">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Российский рубль</x:String>
+                    <x:String>Евро</x:String>
+                    <x:String>Доллар США</x:String>
+                    <x:String>Швейцарский франк</x:String>
+                    <x:String>Китайский юань</x:String>
+                    <x:String>Фунт стерлингов</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
+
+    </Grid>
+
+</ContentPage>
