@@ -6,8 +6,8 @@ namespace Lab1_4.Entities
     public class Member
     {
         [PrimaryKey, AutoIncrement, Indexed]
-        [Column("Id")]
-        public int MemberId { get; set; }
+        [SQLite.Column("ID")]
+        public int MemberID { get; set; }
         public string? Name { get; set; }
         public int Number { get; set; }
         public string? Emblem { get; set; }

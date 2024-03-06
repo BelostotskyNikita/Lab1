@@ -5,26 +5,21 @@ namespace Lab1_4.Services
 {
     public class SQLiteService : IDbService
     {
-        private SQLiteConnection db;
-        public SQLiteService() { }
-        public IEnumerable<Team> GetAllTeams()
-        {
-            var members = db.Table<Team>();
-            return members;
-        }
-        public IEnumerable<Member> GetMembers(int id)
-        {
-            var members = db.Table<Member>()
-                .Where(t => t.TeamId == id)
-                .ToList();
-            return members;
-        }
-        public string? GetTeamEm(int id) => db.Table<Team>().ToList()[id].Emblem;
+        private SQLiteConnection? db;
+        public IEnumerable<Team>? GetAllTeams()
+            => db?.Table<Team>();
+        public IEnumerable<Member>? GetMembers(int id)
+            => db?.Table<Member>().Where(t => t.TeamId == id);
         public void Init()
         {
-            if (db is not null) return;
             var dbPath = Path.Combine(FileSystem.AppDataDirectory, "MyDB.db3");
-            if (File.Exists(dbPath)) File.Delete(dbPath);
+            
+            if (File.Exists(dbPath))
+            {
+                db = new SQLiteConnection(dbPath);
+                return;
+            }
+
             db = new SQLiteConnection(dbPath);
             db.CreateTable<Team>();
             db.CreateTable<Member>();

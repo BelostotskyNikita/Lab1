@@ -9,6 +9,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="0.1*"/>
             <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.1*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
@@ -20,23 +21,26 @@
         <Entry
             Grid.Column="0"
             Grid.Row="0"
-            Text="entry1"
+            x:Name="entry1"
+            Text="1"
             TextChanged="OnEntry1TextChanged"/>
 
         <Entry
             Grid.Column="0"
             Grid.Row="1"
-            Text="entry2"
+            x:Name="entry2"
+            Text="1"
             TextChanged="OnEntry2TextChanged"/>
 
         <Picker 
             Grid.Column="1"
             Grid.Row="0"
             x:Name="picker1"
-            Title="picker1"
+            SelectedIndex="0"
             SelectedIndexChanged="picker1_SelectedIndexChanged">
             <Picker.ItemsSource>
                 <x:Array Type="{x:Type x:String}">
+                    <x:String>Белоруский рубль</x:String>
                     <x:String>Российский рубль</x:String>
                     <x:String>Евро</x:String>
                     <x:String>Доллар США</x:String>
@@ -51,10 +55,11 @@
             Grid.Column="1"
             Grid.Row="1"
             x:Name="picker2"
-            Title="picker2"
+            SelectedIndex="0"
             SelectedIndexChanged="picker2_SelectedIndexChanged">
             <Picker.ItemsSource>
                 <x:Array Type="{x:Type x:String}">
+                    <x:String>Белоруский рубль</x:String>
                     <x:String>Российский рубль</x:String>
                     <x:String>Евро</x:String>
                     <x:String>Доллар США</x:String>
@@ -65,7 +70,12 @@
             </Picker.ItemsSource>
         </Picker>
 
-
+        <DatePicker
+            Grid.Row="2"
+            Grid.Column="2">
+            
+        </DatePicker>
+        
     </Grid>
 
 </ContentPage>

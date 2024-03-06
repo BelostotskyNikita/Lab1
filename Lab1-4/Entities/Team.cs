@@ -6,7 +6,7 @@ namespace Lab1_4.Entities
     public class Team
     {
         [PrimaryKey, AutoIncrement, Indexed]
-        public int Id { get; set; }
+        public int ID { get; set; }
         public string? Name { get; set; }
         public string? Emblem { get; set; }
     }

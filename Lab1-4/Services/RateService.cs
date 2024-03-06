@@ -1,13 +1,18 @@
 ﻿using Lab1_4.Entities;
+using System.Text.Json;
 
 namespace Lab1_4.Services
 {
-    internal class RateService : IRateService
+    public class RateService(HttpClient client) : IRateService
     {
-        public IEnumerable<Rate> GetRates(DateTime date)
+        //private HttpClient client;
+        //public RateService() => client = new HttpClient();
+        public async Task<IEnumerable<Rate>?> GetRates(DateTime date)
         {
-
-            throw new NotImplementedException();
+            var response = await client.GetAsync(new Uri($"{date.ToString("yyyy-MM-dd")}&periodicity=0"));
+            response.EnsureSuccessStatusCode();
+            var responseBody = await response.Content.ReadAsStringAsync();
+            return JsonSerializer.Deserialize<IEnumerable<Rate>>(responseBody);
         }
     }
 }

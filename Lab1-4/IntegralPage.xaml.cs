@@ -2,35 +2,29 @@
 
 public partial class IntegralPage : ContentPage
 {
-    CancellationTokenSource source = null;
-    //double sum = 0;
-    //int persent = 0;
+    CancellationTokenSource? source = null;
     bool isCancelled = false, isStarted = false;
     Color color = Color.Parse("LightGray");
     public IntegralPage() => InitializeComponent();
     private async void OnStart(object sender, EventArgs e)
     {
-        //((Button)sender).IsEnabled = false;
         if (isStarted) return;
         isCancelled = false;
         isStarted = true;
         source = new CancellationTokenSource();
         var token = source.Token;
-        Calculation(); //Progress();
+        Calculation();
         try
         {
             await Task.Run(() => Integrate(token));
             isCancelled = true;
             isStarted = false;
             this.progressLabel.Text = "100%";
-            //this.statusLabel.Text = "∫sin(x) = " + sum.ToString();
-            //sum = 0;
         }
-        catch (OperationCanceledException ex)
+        catch (OperationCanceledException)
         {
             isStarted = false;
             this.statusLabel.Text = "Cancelled";
-            //sum = 0; 
         }
         finally
         {
@@ -40,7 +34,7 @@ public partial class IntegralPage : ContentPage
     private void OnCancel(object sender, EventArgs e)
     {
         if (isCancelled) return;
-        source.Cancel();
+        source?.Cancel();
         isCancelled = true;
     }
     private void OnPres(object sender, EventArgs e)
@@ -65,12 +59,10 @@ public partial class IntegralPage : ContentPage
             sum += Math.Sin(x) * 0.00001;
             this.prbar.Progress = x;
             persent = (int)(x * 100);
-            //this.progressLabel.Text = persent.ToString() + '%';
             MainThread.InvokeOnMainThreadAsync(() => { this.progressLabel.Text = persent.ToString() + '%'; });
             if (token.IsCancellationRequested) token.ThrowIfCancellationRequested();
         }
         MainThread.InvokeOnMainThreadAsync(() => { this.statusLabel.Text = "∫sin(x) = " + sum.ToString(); });
-        //this.statusLabel.Text = "∫sin(x) = " + sum.ToString();
     }
     async void Calculation()
     {
@@ -90,12 +82,4 @@ public partial class IntegralPage : ContentPage
             if (!isStarted) break;
         }
     }
-    //async void Progress()
-    //{
-    //    while (isStarted)
-    //    {
-    //        this.progressLabel.Text = persent.ToString() + '%';
-    //        await Task.Delay(1);
-    //    }
-    //}
 }

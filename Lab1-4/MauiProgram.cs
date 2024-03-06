@@ -1,11 +1,13 @@
 ﻿using Microsoft.Extensions.Logging;
 using Lab1_4.Services;
-using System.ComponentModel.Design;
 
 namespace Lab1_4
 {
     public static class MauiProgram
     {
+        public static IServiceCollection services = new ServiceCollection();
+        public static IDbService? sqliteService = new SQLiteService();
+        public static IRateService? rateService = new RateService(new HttpClient());
         public static MauiApp CreateMauiApp()
         {
             var builder = MauiApp.CreateBuilder();
@@ -16,9 +18,9 @@ namespace Lab1_4
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
-            builder.Services.AddTransient<IDbService, SQLiteService>();
-            builder.Services.AddTransient<DataBasePage>();
-            builder.Services.AddTransient<CurrencyConverterPage>();
+            services.AddTransient<IDbService, SQLiteService>();
+            services.AddTransient<IRateService, RateService>();
+            services.AddHttpClient<IRateService, RateService>(opt => opt.BaseAddress = new Uri("https://api.nbrb.by/exrates/rates?ondate="));
 #if DEBUG
             builder.Logging.AddDebug();
 #endif

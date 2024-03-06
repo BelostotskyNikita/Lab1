@@ -1,25 +1,21 @@
 using Lab1_4.Services;
-using Lab1_4.Entities;
 
 namespace Lab1_4;
 
 public partial class DataBasePage : ContentPage
 {
-    private SQLiteService sqliteserv = new SQLiteService();
     public DataBasePage()
-	{
+    {
 		InitializeComponent();
-        sqliteserv.Init();
-        this.picker.ItemsSource = sqliteserv.GetAllTeams().Select(item => item.Name).ToList();
+        MauiProgram.sqliteService = MauiProgram.services.BuildServiceProvider().GetService<IDbService>();
+        MauiProgram.sqliteService?.Init();
+        this.picker.ItemsSource = MauiProgram.sqliteService?.GetAllTeams()?.Select(t => t.Name).ToList();
     }
     private void picker_SelectedIndexChanged(object sender, EventArgs e)
     {
         var picker = (Picker)sender;
         int selectedIndex = picker.SelectedIndex;
         if (selectedIndex != -1)
-        {
-            var members = sqliteserv.GetMembers(selectedIndex).ToList();
-            this.ListView.ItemsSource = members;
-        }
+            this.ListView.ItemsSource = MauiProgram.sqliteService?.GetMembers(selectedIndex)?.ToList();
     }
 }
