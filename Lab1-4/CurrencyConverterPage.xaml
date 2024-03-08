@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Lab1_4.CurrencyConverterPage"
-             Title="CurrencyConverterPage">
+             x:Class="Lab1_4.CurrencyConverterPage">
 
-    <Grid Padding="10" ColumnSpacing="15" RowSpacing="3" Background="{AppThemeBinding Light=White, Dark=Black}">
+    <Grid Padding="10" ColumnSpacing="15" RowSpacing="3" Background="{AppThemeBinding Light=White, Dark=LightBlack}">
 
         <Grid.RowDefinitions>
             <RowDefinition Height="0.1*"/>
@@ -22,31 +21,22 @@
             Grid.Column="0"
             Grid.Row="0"
             x:Name="entry1"
-            Text="1"
-            TextChanged="OnEntry1TextChanged"/>
+            TextChanged="entry1_TextChanged"/>
 
         <Entry
             Grid.Column="0"
             Grid.Row="1"
             x:Name="entry2"
-            Text="1"
-            TextChanged="OnEntry2TextChanged"/>
+            TextChanged="entry2_TextChanged"/>
 
         <Picker 
             Grid.Column="1"
             Grid.Row="0"
             x:Name="picker1"
-            SelectedIndex="0"
-            SelectedIndexChanged="picker1_SelectedIndexChanged">
+            Title="Currency">
             <Picker.ItemsSource>
                 <x:Array Type="{x:Type x:String}">
-                    <x:String>Белоруский рубль</x:String>
-                    <x:String>Российский рубль</x:String>
-                    <x:String>Евро</x:String>
-                    <x:String>Доллар США</x:String>
-                    <x:String>Швейцарский франк</x:String>
-                    <x:String>Китайский юань</x:String>
-                    <x:String>Фунт стерлингов</x:String>
+                    <x:String>BYN</x:String>
                 </x:Array>
             </Picker.ItemsSource>
         </Picker>
@@ -55,27 +45,27 @@
             Grid.Column="1"
             Grid.Row="1"
             x:Name="picker2"
-            SelectedIndex="0"
+            Title="Currency"
             SelectedIndexChanged="picker2_SelectedIndexChanged">
             <Picker.ItemsSource>
-                <x:Array Type="{x:Type x:String}">
-                    <x:String>Белоруский рубль</x:String>
-                    <x:String>Российский рубль</x:String>
-                    <x:String>Евро</x:String>
-                    <x:String>Доллар США</x:String>
-                    <x:String>Швейцарский франк</x:String>
-                    <x:String>Китайский юань</x:String>
-                    <x:String>Фунт стерлингов</x:String>
-                </x:Array>
+                <x:Array Type="{x:Type x:String}"/>
             </Picker.ItemsSource>
         </Picker>
 
         <DatePicker
             Grid.Row="2"
-            Grid.Column="2">
-            
+            Grid.Column="1"
+            x:Name="datePicker"
+            DateSelected="datePicker_DateSelected">
         </DatePicker>
-        
+
+        <Label Grid.Row="3"
+               Grid.Column="0"
+               Grid.ColumnSpan="2"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               x:Name="gg"/>
+
     </Grid>
 
 </ContentPage>

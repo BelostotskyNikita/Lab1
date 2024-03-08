@@ -2,8 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Lab1_4.CalculatorPage">
-             <!--xmlns:local="clr-namespace:Lab1"-->
-
+             
     <Grid Padding="10" ColumnSpacing="15" RowSpacing="3" Background="{AppThemeBinding Light=White, Dark=Black}">
 
         <Grid.RowDefinitions>
@@ -458,9 +457,9 @@
 <!--<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Lab1.MainPage">
+             x:Class="Lab1_4.CalculatorPage">-->
 
-    <Grid Padding="10" ColumnSpacing="15" RowSpacing="3">
+    <!--<Grid Padding="10" ColumnSpacing="15" RowSpacing="3">
 
         <Grid.Background>
             <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
@@ -493,11 +492,11 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        --><!--<Label
+        <Label
             Grid.Row="5"
             Grid.Column="0"
             Grid.ColumnSpan="4"
-            Background="DimGray"/>--><!--
+            Background="DimGray"/>
 
         <Label
             Grid.Row="4"
@@ -1061,6 +1060,6 @@
             </Button.Background>
         </Button>
 
-    </Grid>
+    </Grid>-->
     
-</ContentPage>-->
+<!--</ContentPage>-->

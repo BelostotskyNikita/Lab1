@@ -4,18 +4,20 @@ namespace Lab1_4;
 
 public partial class DataBasePage : ContentPage
 {
-    public DataBasePage()
+    private readonly IDbService dbService;
+    public DataBasePage(IDbService dbService)
     {
 		InitializeComponent();
-        MauiProgram.sqliteService = MauiProgram.services.BuildServiceProvider().GetService<IDbService>();
-        MauiProgram.sqliteService?.Init();
-        this.picker.ItemsSource = MauiProgram.sqliteService?.GetAllTeams()?.Select(t => t.Name).ToList();
+        this.dbService = dbService;
+        dbService.Init();
+        picker.ItemsSource = dbService.GetAllTeams()?.Select(t => t.Name).ToList();
+        
     }
     private void picker_SelectedIndexChanged(object sender, EventArgs e)
     {
         var picker = (Picker)sender;
         int selectedIndex = picker.SelectedIndex;
         if (selectedIndex != -1)
-            this.ListView.ItemsSource = MauiProgram.sqliteService?.GetMembers(selectedIndex)?.ToList();
+            ListView.ItemsSource = dbService.GetMembers(selectedIndex)?.ToList();
     }
 }
