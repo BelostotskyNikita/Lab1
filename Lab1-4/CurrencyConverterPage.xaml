@@ -58,14 +58,7 @@
             x:Name="datePicker"
             DateSelected="datePicker_DateSelected">
         </DatePicker>
-
-        <Label Grid.Row="3"
-               Grid.Column="0"
-               Grid.ColumnSpan="2"
-               HorizontalOptions="Center"
-               VerticalOptions="Center"
-               x:Name="gg"/>
-
+        
     </Grid>
 
 </ContentPage>
